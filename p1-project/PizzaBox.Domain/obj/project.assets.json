@@ -4150,7 +4150,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
-      "microsoft.aspnetcore.mvc.dataannotations"
+      "microsoft.aspnetcore.mvc.dataannotations >= 2.2.0"
     ]
   },
   "packageFolders": {
@@ -4196,7 +4196,7 @@
           },
           "microsoft.aspnetcore.mvc.dataannotations": {
             "target": "Package",
-            "version": "(, )"
+            "version": "[2.2.0, )"
           }
         },
         "imports": [

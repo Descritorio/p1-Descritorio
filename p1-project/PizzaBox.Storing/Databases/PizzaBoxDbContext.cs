@@ -4,7 +4,7 @@ using PizzaBox.Domain.Models;
 
 namespace PizzaBox.Storing.Databases
 {
-  public class PizzaBoxDb : DbContext
+  public class PizzaBoxDbContext : DbContext
   {
     public DbSet<Pizza> Pizza { get; set; }
     public DbSet<User> User { get; set; }
@@ -15,10 +15,14 @@ namespace PizzaBox.Storing.Databases
     {
       builder.UseSqlServer("server=localhost;database=pizzaboxdb;user id=sa;password=Password12345;");
     }
+    
+    // public PizzaBoxDbContext (DbContextOptions<PizzaBoxDbContext> options) : base(options)
+    // {}
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
       modelBuilder.Entity<Order>().HasKey(o => o.OrderId);
-      modelBuilder.Entity<Order>().HasMany(o => o.Pizzas).WithOne(o => o.Order);
+      modelBuilder.Entity<Order>().HasMany(o => o.OrderPizzas).WithOne(op => op.Order);
       modelBuilder.Entity<Order>().HasOne(o => o.Store).WithMany(o => o.Orders);
       modelBuilder.Entity<Order>().HasOne(o => o.User).WithMany(o => o.Orders);
       modelBuilder.Entity<Order>().HasData(new Order[] 
@@ -34,8 +38,24 @@ namespace PizzaBox.Storing.Databases
         new Order() { OrderId = 9, OrderDateTime = new DateTime(2020, 03, 23, 21, 00, 00), StoreId = 3, UserId = 5},
       });
 
+      modelBuilder.Entity<OrderPizza>().HasKey(op => op.OrderPizzaId);
+      modelBuilder.Entity<OrderPizza>().HasData(new OrderPizza[]
+      {
+        new OrderPizza() { OrderPizzaId = 1, OrderId = 1, PizzaId = 1},
+        new OrderPizza() { OrderPizzaId = 2, OrderId = 2, PizzaId = 2},
+        new OrderPizza() { OrderPizzaId = 3, OrderId = 3, PizzaId = 3},
+        new OrderPizza() { OrderPizzaId = 4, OrderId = 4, PizzaId = 4},
+        new OrderPizza() { OrderPizzaId = 5, OrderId = 5, PizzaId = 5},
+        new OrderPizza() { OrderPizzaId = 6, OrderId = 6, PizzaId = 6},
+        new OrderPizza() { OrderPizzaId = 7, OrderId = 7, PizzaId = 7},
+        new OrderPizza() { OrderPizzaId = 8, OrderId = 8, PizzaId = 8},
+        new OrderPizza() { OrderPizzaId = 9, OrderId = 9, PizzaId = 9},
+        new OrderPizza() { OrderPizzaId = 10, OrderId = 9, PizzaId = 10},
+
+      });
+
       modelBuilder.Entity<Pizza>().HasKey(p => p.PizzaId);
-      modelBuilder.Entity<Pizza>().HasOne(p => p.Order).WithMany(p => p.Pizzas);
+      modelBuilder.Entity<Pizza>().HasMany(p => p.OrderPizzas).WithOne(p => p.Pizza);
       modelBuilder.Entity<Pizza>().HasData(new Pizza[] 
       {
         new Pizza() { PizzaId = 1, PizzaName = "The Worst Pizza", PizzaDetails = "Uncooked Pizza Dough", PizzaPrice = 1.00M, },
@@ -47,6 +67,7 @@ namespace PizzaBox.Storing.Databases
         new Pizza() { PizzaId = 7, PizzaName = "The Sweat", PizzaDetails = "Thin Crust, Small Size, Tomato Sauce, Mozarella Cheese, Ground Beef, Allspice", PizzaPrice = 7.00M, },
         new Pizza() { PizzaId = 8, PizzaName = "The Hallowus", PizzaDetails = "Traditional Crust, Large Size, Mozarella Cheese, Pesto Dollops, White Sauce, Chicken, Green Bell Peppers, Red Onions", PizzaPrice = 8.00M, },
         new Pizza() { PizzaId = 9, PizzaName = "The Pupit", PizzaDetails = "Thick Crust, Tomato Sauce, Bacon, Eggs, Cheese, Corn", PizzaPrice = 9.00M, },
+        new Pizza() { PizzaId = 10, PizzaName = "The Puffer", PizzaDetails = "Eugh", PizzaPrice = 9.00M, },
       });
 
       modelBuilder.Entity<Store>().HasKey(s => s.StoreId);

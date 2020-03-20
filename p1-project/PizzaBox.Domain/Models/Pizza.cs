@@ -13,8 +13,7 @@ namespace PizzaBox.Domain.Models
     public decimal PizzaPrice { get; set; }
 
     #region NAVIGATION
-    public Order Order { get; set; }
-    public long OrderId { get; set; }
+    public List<OrderPizza> OrderPizzas { get; set; }
     #endregion
   }
 }

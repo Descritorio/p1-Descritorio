@@ -6,9 +6,9 @@ namespace PizzaBox.Client.Controllers
   public class PizzaController : Controller
   {
     [HttpGet]
-    public IActionResult Read()
+    public IActionResult Index()
     {
-      return View();
+      return View(new PizzaViewModel());
     }
 
     [HttpGet]
