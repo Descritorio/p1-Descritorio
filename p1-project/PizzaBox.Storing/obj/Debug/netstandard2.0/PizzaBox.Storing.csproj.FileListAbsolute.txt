@@ -1,0 +1,11 @@
+/Users/jeremychheav/Desktop/revature_projects/p1-Descritorio/p1-project/PizzaBox.Storing/bin/Debug/netstandard2.0/PizzaBox.Storing.deps.json
+/Users/jeremychheav/Desktop/revature_projects/p1-Descritorio/p1-project/PizzaBox.Storing/bin/Debug/netstandard2.0/PizzaBox.Storing.dll
+/Users/jeremychheav/Desktop/revature_projects/p1-Descritorio/p1-project/PizzaBox.Storing/bin/Debug/netstandard2.0/PizzaBox.Storing.pdb
+/Users/jeremychheav/Desktop/revature_projects/p1-Descritorio/p1-project/PizzaBox.Storing/bin/Debug/netstandard2.0/PizzaBox.Domain.dll
+/Users/jeremychheav/Desktop/revature_projects/p1-Descritorio/p1-project/PizzaBox.Storing/bin/Debug/netstandard2.0/PizzaBox.Domain.pdb
+/Users/jeremychheav/Desktop/revature_projects/p1-Descritorio/p1-project/PizzaBox.Storing/obj/Debug/netstandard2.0/PizzaBox.Storing.csprojAssemblyReference.cache
+/Users/jeremychheav/Desktop/revature_projects/p1-Descritorio/p1-project/PizzaBox.Storing/obj/Debug/netstandard2.0/PizzaBox.Storing.AssemblyInfoInputs.cache
+/Users/jeremychheav/Desktop/revature_projects/p1-Descritorio/p1-project/PizzaBox.Storing/obj/Debug/netstandard2.0/PizzaBox.Storing.AssemblyInfo.cs
+/Users/jeremychheav/Desktop/revature_projects/p1-Descritorio/p1-project/PizzaBox.Storing/obj/Debug/netstandard2.0/PizzaBox.Storing.csproj.CopyComplete
+/Users/jeremychheav/Desktop/revature_projects/p1-Descritorio/p1-project/PizzaBox.Storing/obj/Debug/netstandard2.0/PizzaBox.Storing.dll
+/Users/jeremychheav/Desktop/revature_projects/p1-Descritorio/p1-project/PizzaBox.Storing/obj/Debug/netstandard2.0/PizzaBox.Storing.pdb

@@ -1,0 +1,20 @@
+version: '3.7'
+
+services: 
+  app:
+    deploy:
+      replics: 1
+    networks:
+      - skynet
+      ports:
+      - 8000:80
+  
+  sql:
+    image:
+      networks:
+        - skynet
+      ports:
+        - 8000:80
+
+networks:
+  skynet:
